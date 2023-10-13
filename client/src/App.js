@@ -1,7 +1,7 @@
 // import './App.css';
 import { useState } from 'react';
-import AddTodo from './components/AddTodo';
-import Todo from './components/Todo';
+import AddTodo from './Components/AddTodo';
+import Todo from './Components/Todo';
 
 function App() {
   const [todoItems, setTodoItems] = useState([
@@ -33,19 +33,20 @@ function App() {
     console.log(todoItems.length);
 
     // newItem: { id: 5, title: '저녁먹기', done: false }
-    newItem.id = todoItems[todoItems.length - 1].id + 1;
-    // newItem.id = todoItems.length + 1;
+    // newItem.id = todoItems[todoItems.length - 1].id + 1;
+    newItem.id = todoItems.length + 1;
     newItem.done = false;
+    console.log(newItem);
 
     // todoItems 배열에 newItem을 추가
     setTodoItems([...todoItems, newItem]);
   };
 
   // todoItems 상태에 특정 투두를 삭제하는 일
-  const deleteItem = (deleteId) => {
-    const resetItem = todoItems.filter((item) => item.id !== deleteId);
+  const deleteItem = (targetItem) => {
+    const newTodoItems = todoItems.filter((item) => item.id !== targetItem.id);
 
-    setTodoItems(resetItem);
+    setTodoItems(newTodoItems);
   };
 
   return (
