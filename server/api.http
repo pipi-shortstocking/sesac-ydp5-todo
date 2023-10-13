@@ -10,3 +10,14 @@ Content-Type: application/json; charset=UTF-8
 {
     "title": "운동"
 }
+
+###
+PATCH {{server}}/todo/2
+Content-Type: application/json; charset=UTF-8
+
+{
+    "done": true
+}
+
+###
+DELETE {{server}}/todo/6
