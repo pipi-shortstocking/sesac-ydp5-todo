@@ -1,0 +1,12 @@
+@server = http://localhost:8000/api
+
+###
+GET {{server}}/todos
+
+###
+POST {{server}}/todo
+Content-Type: application/json; charset=UTF-8
+
+{
+    "title": "운동"
+}
