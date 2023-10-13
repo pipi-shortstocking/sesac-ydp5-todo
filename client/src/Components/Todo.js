@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 
 // checkbox와 label을 렌더링하는 투두 하나!
 export default function Todo({ item, deleteItem, updateItem }) {
@@ -64,7 +67,9 @@ export default function Todo({ item, deleteItem, updateItem }) {
         onChange={editEventHandler}
         onKeyDown={editKeyEventHandler}
       />
-      <button onClick={onDeleteButtonClick}>DELETE</button>
+      <Button variant="outline-dark" size="sm" onClick={onDeleteButtonClick}>
+        DELETE
+      </Button>
     </div>
   );
 }

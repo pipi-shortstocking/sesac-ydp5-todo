@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.Cnt {
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+  background-color: bisque;
+}
+
+/* .addBtn {
+  font-size: 3px;
+} */
+
+.New {
+  width: auto;
+}

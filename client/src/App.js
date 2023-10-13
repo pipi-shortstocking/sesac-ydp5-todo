@@ -1,8 +1,9 @@
-// import './App.css';
+import './App.css';
 import { useEffect, useState } from 'react';
 import AddTodo from './Components/AddTodo';
 import Todo from './Components/Todo';
 import axios from 'axios';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 function App() {
   // console.log(process.env.REACT_APP_DB_HOST);
@@ -58,10 +59,17 @@ function App() {
 
   // 현재 Todo 개수
   const cnt = todoItems.filter((item) => item.done !== true);
+  const total = todoItems.length;
+
+  console.log('비율 >> ', total - cnt.length / total);
 
   return (
     <div className="App">
-      <div>현재 Todo 개수: {cnt.length}</div>
+      <div className="Cnt">현재 Todo 개수: {cnt.length}</div>
+      <ProgressBar
+        now={`${cnt.length / total}*10`}
+        label={`${cnt.length * 10}%`}
+      />
       <AddTodo addItem={addItem} />
       {/* todoItems 반복, props 데이터(투두 객체)를 각자 자식 컴포넌트에게 전달 */}
       {todoItems.map((item) => (
