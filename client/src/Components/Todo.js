@@ -53,6 +53,7 @@ export default function Todo({ item, deleteItem, updateItem }) {
     <div>
       <input
         type="checkbox"
+        className="form-check-input"
         name={`todo${id}`}
         id={`todo${id}`}
         defaultChecked={done}
@@ -62,6 +63,7 @@ export default function Todo({ item, deleteItem, updateItem }) {
       <input
         type="test"
         value={todoItem.title}
+        className="todo"
         readOnly={readOnly}
         onClick={offReadOnlyMode}
         onChange={editEventHandler}
@@ -70,6 +72,9 @@ export default function Todo({ item, deleteItem, updateItem }) {
       <Button variant="outline-dark" size="sm" onClick={onDeleteButtonClick}>
         DELETE
       </Button>
+      {/* <button variant="outline-dark" size="sm" onClick={onDeleteButtonClick}>
+        DELETE
+      </button> */}
     </div>
   );
 }

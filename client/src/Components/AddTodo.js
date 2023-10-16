@@ -15,23 +15,12 @@ export default function AddTodo({ addItem }) {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Add your new Todo"
-        value={todoItem.title}
-        onChange={(e) => setTodoItem({ title: e.target.value })}
-      />
-      <Button
-        className="addBtn"
-        size="sm"
-        variant="outline-success"
-        onClick={onButtonClick}
-      >
-        ADD
-      </Button>
-
       <InputGroup size="sm" className="New">
-        <Form.Control placeholder="Add your new Todo" />
+        <Form.Control
+          placeholder="Add your new Todo"
+          value={todoItem.title}
+          onChange={(e) => setTodoItem({ title: e.target.value })}
+        />
         <Button
           className="addBtn"
           size="sm"

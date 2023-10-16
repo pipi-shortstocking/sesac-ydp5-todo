@@ -1,17 +1,15 @@
 .App {
   text-align: center;
+  margin: 10px 15%;
 }
 
 .Cnt {
   font-weight: bold;
   margin: 10px 0 10px 0;
-  background-color: bisque;
+  background-color: rgb(130, 151, 130);
 }
 
-/* .addBtn {
-  font-size: 3px;
-} */
-
-.New {
-  width: auto;
+.todo {
+  width: 55%;
+  height: 35px;
 }

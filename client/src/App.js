@@ -58,19 +58,24 @@ function App() {
   };
 
   // 현재 Todo 개수
-  const cnt = todoItems.filter((item) => item.done !== true);
+  const doneCnt = todoItems.filter((item) => item.done === true);
   const total = todoItems.length;
 
-  console.log('비율 >> ', total - cnt.length / total);
+  // console.log('비율 >> ', doneCnt.length / total);
 
   return (
     <div className="App">
-      <div className="Cnt">현재 Todo 개수: {cnt.length}</div>
+      <div className="Cnt">
+        <h1>TODO LIST</h1>
+        <span>남은 Todo 개수: {total - doneCnt.length}</span>
+      </div>
       <ProgressBar
-        now={`${cnt.length / total}*10`}
-        label={`${cnt.length * 10}%`}
+        now={`${(doneCnt.length / total) * 100}`}
+        label={`${Math.ceil((doneCnt.length / total) * 100)}%`}
       />
+      <br></br>
       <AddTodo addItem={addItem} />
+      <br></br>
       {/* todoItems 반복, props 데이터(투두 객체)를 각자 자식 컴포넌트에게 전달 */}
       {todoItems.map((item) => (
         <Todo
